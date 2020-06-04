@@ -80,6 +80,10 @@ const char * const riscv_fpr_names_abi[NFPR] = {
 #define MASK_RL (OP_MASK_RL << OP_SH_RL)
 #define MASK_AQRL (MASK_AQ | MASK_RL)
 
+
+
+
+
 static int
 match_opcode (const struct riscv_opcode *op, insn_t insn)
 {
@@ -777,6 +781,14 @@ const struct riscv_opcode riscv_opcodes[] =
 {"sfence.vma", 0, INSN_CLASS_I,   "s",    MATCH_SFENCE_VMA, MASK_SFENCE_VMA | MASK_RS2, match_opcode, INSN_ALIAS },
 {"sfence.vma", 0, INSN_CLASS_I,   "s,t",  MATCH_SFENCE_VMA, MASK_SFENCE_VMA, match_opcode, 0 },
 {"wfi",        0, INSN_CLASS_I,   "",     MATCH_WFI, MASK_WFI, match_opcode, 0 },
+
+{"fft.b2t.y1", 0, INSN_CLASS_I,   "d,s,t,r",  MATCH_BTF2_DIT_Y1, MASK_FFT_BTF2, match_opcode, 0 },
+{"fft.b2t.y2", 0, INSN_CLASS_I,   "d,s,t,r",  MATCH_BTF2_DIT_Y2, MASK_FFT_BTF2, match_opcode, 0 },
+{"fft.b2f.y1", 0, INSN_CLASS_I,   "d,s,t,r",  MATCH_BTF2_DIF_Y1, MASK_FFT_BTF2, match_opcode, 0 },
+{"fft.b2f.y2", 0, INSN_CLASS_I,   "d,s,t,r",  MATCH_BTF2_DIF_Y2, MASK_FFT_BTF2, match_opcode, 0 },
+{"fft.fabs",   0, INSN_CLASS_I,   "d,s",      MATCH_FFT_ABS,     MASK_FFT_ABS,  match_opcode, 0 },
+{"fft.bitrev", 0, INSN_CLASS_I,   "d,s,t",    MATCH_FFT_BITREV,  MASK_FFT_BITREV,  match_opcode, 0 },
+
 
 /* Terminate the list.  */
 {0, 0, INSN_CLASS_NONE, 0, 0, 0, 0, 0}

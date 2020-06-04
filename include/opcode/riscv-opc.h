@@ -575,6 +575,31 @@
 #define MASK_CUSTOM3_RD_RS1  0x707f
 #define MATCH_CUSTOM3_RD_RS1_RS2 0x707b
 #define MASK_CUSTOM3_RD_RS1_RS2  0x707f
+
+
+//#define MASK_CUST0 0x707f
+//#define MATCH_CUST0_0 0x000b
+//#define MATCH_CUST0_1 0x100b
+//#define MATCH_CUST0_2 0x200b
+//#define MATCH_CUST0_3 0x300b
+//#define MATCH_CUST0_4 0x400b
+//#define MATCH_CUST0_5 0x500b
+//#define MATCH_CUST0_6 0x600b
+//#define MATCH_CUST0_7 0x700b
+
+#define MASK_FFT_BTF2     0x0600707f
+#define MATCH_BTF2_DIT_Y1 0x0000000b
+#define MATCH_BTF2_DIT_Y2 0x0000100b
+#define MATCH_BTF2_DIF_Y1 0x0000200b
+#define MATCH_BTF2_DIF_Y2 0x0000300b
+
+#define MASK_FFT_ABS      0xfff0707f
+#define MATCH_FFT_ABS     0x0000400b
+
+#define MASK_FFT_BITREV  0xfe00707f
+#define MATCH_FFT_BITREV 0x0000500b
+
+
 #define CSR_USTATUS 0x0
 #define CSR_UIE 0x4
 #define CSR_UTVEC 0x5
